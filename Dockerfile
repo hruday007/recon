@@ -1,8 +1,8 @@
 FROM ubuntu:18.04
 
-COPY chmod +x scripts/install.sh /install.sh
-COPY chmod +x scripts/automate.sh /automate.sh
+COPY scripts/install.sh /install.sh
+COPY --chmod=0755 scripts/automate.sh /automate.sh
 
-RUN "/install.sh"
+RUN chmod +x "/install.sh"
 
 ENTRYPOINT ["/bin/bash", "automate.sh"]
