@@ -34,10 +34,12 @@ jobs:
           
           
       - name: Build and push
-        uses: mr-smithers-excellent/docker-build-push@v4
+        uses: mr-smithers-excellent/docker-build-push@v5
         with:
-         image: hrx7/recon
+         image: hrx7/
+         tags: latest
          registry: docker.io
+         dockerfile: dockerfile
          username: ${{ secrets.DOCKERHUB_USERNAME }}
          password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
