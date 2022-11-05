@@ -1,8 +1,8 @@
 FROM ubuntu:18.04
 
-ADD scripts/insall.sh /
-ADD scripts/automate.sh /  
+COPY scripts/insall.sh /scripts
+COPY scripts/automate.sh /scripts
 
-RUN bash -c "/install.sh"
+RUN bash -c "scripts/install.sh"
 
 ENTRYPOINT ["/bin/bash", "automate.sh"]
