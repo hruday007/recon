@@ -5,4 +5,6 @@ COPY scripts/automate.sh /automate.sh
 
 RUN chmod +x "/install.sh"
 
+#This is entrypoint to docker run
+
 ENTRYPOINT ["/bin/bash", "automate.sh"]
